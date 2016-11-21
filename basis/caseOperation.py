@@ -6,6 +6,8 @@ import selenium.webdriver
 import time
 from time import sleep
 from selenium.webdriver.common.keys import Keys 
+from __builtin__ import str
+from lib2to3.pgen2.driver import Driver
 class caseOperation():
     def caseSelect(self,caseId):       #案件登记
         L=Login()
@@ -38,10 +40,11 @@ class caseOperation():
         driver.switch_to_default_content()
         driver.switch_to_frame('rightFrame')
         try:
+            driver.maximize_window()
             driver.find_element_by_xpath("//input[@value='来信登记']").click()
         except:
             print "waring:无法找到来信登记按钮，需要进行“清除默认”和“案件登记“类型设置"
-              
+     
         allhandle=driver.window_handles
         for handle in allhandle:
             if handle != main_handle:
@@ -214,7 +217,7 @@ class caseOperation():
         Select(driver.find_element_by_id("handleMethod")).select_by_visible_text(u"转办")
         driver.find_element_by_id("depNameText").clear()
         driver.find_element_by_id("depNameText").send_keys(department)
-        driver.find_element_by_css_selector("em").click()
+        driver.find_element_by_xpath("//li[1]/div").click()                                       #新修改的下拉框
         driver.find_element_by_xpath(u"//input[@value='办理']").click()
         allhandles = driver.window_handles
         for handle in allhandles:
@@ -446,10 +449,11 @@ class caseOperation():
         driver.switch_to_default_content()
         driver.switch_to_frame('rightFrame')
         try:
+            driver.maximize_window()
             driver.find_element_by_xpath("//input[@value='来访登记']").click()
         except:
             print '无法找到来访登记按钮，请查时候需要进行“清除默认”和“案件登记“类型设置。'
-              
+        
         allhandle=driver.window_handles
         for handle in allhandle:
             if handle != main_handle:

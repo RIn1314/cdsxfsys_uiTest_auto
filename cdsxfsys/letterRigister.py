@@ -5,7 +5,7 @@ import time
 
 class operation():
     # ***********来信登记**************
-    for i in range(5):
+    for i in range(1):
             o = caseOperation()
             o.letterRigister()
 #以下是展示函数            
