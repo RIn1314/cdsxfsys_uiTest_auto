@@ -3,7 +3,7 @@ from basis.caseOperation import caseOperation
 from Tkinter import *
 
 class caseSelect():
-    
+    #案件查询
     def create_window(self, master):
 
         b2 = Button(master, text = '开始查询')
@@ -22,8 +22,7 @@ class caseSelect():
               width = 40,
               height = 2, 
               text = '成都正式系统').grid(row = 0, column = 0, columnspan = 3)
-      
-        
+         
     def button_click(self,event):       
         caseId =  self.e1.get()
         o = caseOperation()

@@ -15,7 +15,7 @@ class caseOperation():
         driver = DictSet["driver"]
         driver.switch_to_frame('leftFrame')
         driver.find_element_by_xpath("//dd[4]/div").click()
-        sleep(3)
+        sleep(0.5)
         driver.find_element_by_link_text(u"信访件查询").click()
         driver.switch_to_default_content()
         driver.switch_to_frame('rightFrame')

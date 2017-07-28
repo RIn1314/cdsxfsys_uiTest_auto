@@ -1,11 +1,13 @@
 # -*- coding: UTF-8 -*-
 from time import sleep
-import selenium.webdriver
+from selenium import webdriver
 
 class Login:
     
     def login(self,nameLocation,passwordLocation): #传进去两个参数：用户名位置，密码位置
-        driver=selenium.webdriver.Firefox()
+#         driver=selenium.webdriver.Firefox()
+        chromedriver="C:\Python27\selenium\webdriver\chrome\chromedriver.exe"
+        driver = webdriver.Chrome(chromedriver)
         userName = []
         with open("./accountInfomation/userName.txt","rb") as f: 
             for line in f:

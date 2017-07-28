@@ -2,7 +2,7 @@
 from basis.Login import Login
 class temp():
     L=Login()
-    i = {1,2,3}          
+    i = {1}          
     for x in i:
         if x == 1:
             L.login(0,0)
